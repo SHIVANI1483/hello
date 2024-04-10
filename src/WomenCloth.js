@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import {useNavigate} from "react-router-dom"
 import {
     MDBCard,
     MDBCardImage,
@@ -8,29 +7,20 @@ import {
     MDBCardText,
     MDBCardFooter,
     MDBRow,
-    MDBCol,
-    MDBBtn
+    MDBCol
   } from 'mdb-react-ui-kit';
 import Footer from "./Footer";
-function Home()
+function WomenCloth()
 {
-     const [apidata,setdata]=useState([])
-    const navigate=useNavigate()
-    
-    
+   
+
+    const [apidata,setdata]=useState([])
     useEffect(()=>{
         getData()
     },[])
-    function getId(pid)
-    {
-      const data={pid:pid}
-      navigate("/item",{state:data})
-      console.log(pid)
-      
-    }
      async function getData()
     {
-      var result =await fetch("https://fakestoreapi.com/products")
+      var result =await fetch("https://fakestoreapi.com/products/category/women's clothing")
       var data= await result.json()
      
       setdata(data)
@@ -39,12 +29,13 @@ function Home()
     }
     return(
         <>
+         
             <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
              { 
-             apidata.map((item,i)=>  
-      <MDBCol key={i}>
+             apidata.map((item)=>  
+      <MDBCol>
         <MDBCard className='h-100'>
-          <center>
+            <center>
           <MDBCardImage
             src={item.image} style={{width:"100px", height:"100px"}}
             alt='...'
@@ -53,13 +44,12 @@ function Home()
           </center>
           <MDBCardBody>
             <MDBCardTitle>{item.title}</MDBCardTitle>
-            <MDBCardTitle style={{color:"brown"}}>{item.price*80} rs</MDBCardTitle>
+            <MDBCardTitle>{item.price*80} rs</MDBCardTitle>
             <MDBCardTitle>{item.category} </MDBCardTitle>
             <MDBCardTitle>{item.rating.rate}</MDBCardTitle>
             <MDBCardText>
             {item.description}
             </MDBCardText>
-           <center><MDBBtn onClick={()=>getId(item.id)}>view {item.id}</MDBBtn></center> 
           </MDBCardBody>
           
         </MDBCard>
@@ -68,9 +58,11 @@ function Home()
       
     </MDBRow>
     <Footer></Footer>
-
   
-        </>
-    )
+        
+
+    </>
+
+   ) 
 }
-export default Home
+export default WomenCloth

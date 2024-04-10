@@ -39,11 +39,10 @@ function Footer()
             <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>
                 <MDBIcon icon="gem" className="me-3" />
-                Company name
+                FeshionStreet
               </h6>
               <p>
-                Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit.
+                Here you can style your Self by our best Products and Brand.
               </p>
             </MDBCol>
 
@@ -56,14 +55,13 @@ function Footer()
               <NavLink to="/jewelery">Jwellery</NavLink>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
-                  Vue
-                </a>
+              <NavLink to="/Electronic">Electronics</NavLink>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
-                  Laravel
-                </a>
+              <NavLink to="/MenClothes">Men Cloth</NavLink>
+              </p>
+              <p>
+              <NavLink to="/womenCloth">Women Cloth</NavLink>
               </p>
             </MDBCol>
 
@@ -95,17 +93,18 @@ function Footer()
               <h6 className='text-uppercase fw-bold mb-4'>Contact</h6>
               <p>
                 <MDBIcon icon="home" className="me-2" />
-                New York, NY 10012, US
+              Pream Plaza Mall,
+              Bhawarkua,INDORE
               </p>
               <p>
                 <MDBIcon icon="envelope" className="me-3" />
-                info@example.com
+                FeshionStreet.com
               </p>
               <p>
-                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
+                <MDBIcon icon="phone" className="me-3" /> + 91 8965967795
               </p>
               <p>
-                <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
+                <MDBIcon icon="print" className="me-3" /> + 91 6266410465
               </p>
             </MDBCol>
           </MDBRow>
@@ -115,7 +114,7 @@ function Footer()
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © 2021 Copyright:
         <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
+        FeshionStreet.com
         </a>
       </div>
     </MDBFooter>

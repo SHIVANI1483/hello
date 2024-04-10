@@ -20,7 +20,7 @@ function Electronics()
     },[])
      async function getData()
     {
-      var result =await fetch("https://fakestoreapi.com/products")
+      var result =await fetch("https://fakestoreapi.com/products/category/electronics")
       var data= await result.json()
      
       setdata(data)
@@ -43,11 +43,11 @@ function Electronics()
           </center>
           <MDBCardBody>
             <MDBCardTitle>{item.title}</MDBCardTitle>
-            {/* <MDBCardTitle>{item.price}</MDBCardTitle>
-            <MDBCardTitle>{item.rating}</MDBCardTitle> */}
+            <MDBCardTitle>{item.price*80} rs</MDBCardTitle>
+            <MDBCardTitle>{item.category} </MDBCardTitle>
+            <MDBCardTitle>{item.rating.rate}</MDBCardTitle>
             <MDBCardText>
-              This is a longer card with supporting text below as a natural lead-in to additional content.
-              This content is a little bit longer.
+            {item.description}
             </MDBCardText>
           </MDBCardBody>
           

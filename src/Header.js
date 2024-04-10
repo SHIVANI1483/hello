@@ -5,6 +5,11 @@ import Home from './Home'
 import Jwellery from './Jwellery'
 import Electronics from './Electronic'
 import Footer from './Footer'
+import Item from './Item'
+
+
+import MenClothes from './MenClothes'
+import WomenCloth from './WomenCloth'
 
 
 const Header = () => {
@@ -29,8 +34,9 @@ const Header = () => {
               <NavLink to="/MenClothes">Men Cloth</NavLink>
             </li>
             <li>
-              <NavLink to="/contact">Women Cloth</NavLink>
+              <NavLink to="/womenCloth">Women Cloth</NavLink>
             </li>
+            
           </ul>
         </div>
       </div>
@@ -39,6 +45,11 @@ const Header = () => {
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/jewelery' element={<Jwellery></Jwellery>}></Route>
         <Route path='/Electronic' element={<Electronics></Electronics>}></Route>
+        <Route path='/MenClothes' element={<MenClothes></MenClothes>}></Route>
+        <Route path='/womenCloth' element={<WomenCloth></WomenCloth>}></Route>
+        <Route path='/item' element={<Item></Item>}></Route>
+        
+        
 
       </Routes>
     
