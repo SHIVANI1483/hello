@@ -1,14 +1,15 @@
 import React from 'react';
+import './footer.css'
 import { NavLink, Route, Routes } from 'react-router-dom'
 import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
 function Footer()
 {
     return(
-        <>
-        <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
+        <div className='footer1'>
+        <MDBFooter bgColor='light' className='text-center text-lg-start text-muted' >
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 d-none d-lg-block'>
-          <span>Get connected with us on social networks:</span>
+          <span></span>
         </div>
 
         <div>
@@ -33,7 +34,7 @@ function Footer()
         </div>
       </section>
 
-      <section className=''>
+      <section className='footer2'>
         <MDBContainer className='text-center text-md-start mt-5'>
           <MDBRow className='mt-3'>
             <MDBCol md="3" lg="4" xl="3" className='mx-auto mb-4'>
@@ -118,8 +119,7 @@ function Footer()
         </a>
       </div>
     </MDBFooter>
-
-        </>
+        </div>
     )
 }
 export default Footer

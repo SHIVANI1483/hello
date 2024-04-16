@@ -39,27 +39,32 @@ function Home()
     }
     return(
         <>
-            <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+        
+        
+            <MDBRow className='row-cols-1 row-cols-md-3 g-4' style={{margin:"10px"}}>
              { 
              apidata.map((item,i)=>  
       <MDBCol key={i}>
-        <MDBCard className='h-100'>
+        <MDBCard className='h-100' style={{border:"2px solid pink" }}>
           <center>
           <MDBCardImage
-            src={item.image} style={{width:"100px", height:"100px"}}
+            src={item.image} style={{width:"100px", height:"150px", margin:"20px"}}
             alt='...'
             position='top'
           />
           </center>
           <MDBCardBody>
-            <MDBCardTitle>{item.title}</MDBCardTitle>
+            <MDBCardTitle style={{fontFamily:"serif"}}>{item.title}</MDBCardTitle>
             <MDBCardTitle style={{color:"brown"}}>{item.price*80} rs</MDBCardTitle>
-            <MDBCardTitle>{item.category} </MDBCardTitle>
-            <MDBCardTitle>{item.rating.rate}</MDBCardTitle>
+            <MDBCardTitle  style={{color:"red"}}>{item.category} </MDBCardTitle>
+            
+            <MDBCardTitle  style={{color:"blue"}}>Rating : {item.rating.rate} 
+            
+            </MDBCardTitle>
             <MDBCardText>
             {item.description}
             </MDBCardText>
-           <center><MDBBtn onClick={()=>getId(item.id)}>view {item.id}</MDBBtn></center> 
+           <center><MDBBtn style={{backgroundColor:"Brown"}} onClick={()=>getId(item.id)}>view </MDBBtn></center> 
           </MDBCardBody>
           
         </MDBCard>

@@ -10,6 +10,7 @@ import {
     MDBCol,
     MDBBtn
   } from 'mdb-react-ui-kit';
+import Footer from "./Footer";
 function Item()
 {
     const location=useLocation();
@@ -26,22 +27,22 @@ function Item()
     return(
         <>
         
-         {/* <h1>{data.pid}</h1> */}
-         <MDBCard style={{ maxWidth: '540px' }}>
+       
+         <MDBCard style={{ width:"auto", alignContent:"center",  margin:"70px"}}>
       <MDBRow className='g-0'>
         <MDBCol md='4'>
-          <MDBCardImage src={apidata.image} alt='...' fluid />
+         <center> <MDBCardImage src={apidata.image} alt='...' width={"300px"} fluid /></center>
         </MDBCol>
         <MDBCol md='8'>
           <MDBCardBody>
-            <MDBCardTitle>{apidata.title}</MDBCardTitle>
+            <MDBCardTitle style={{fontFamily:"serif"}}>{apidata.title}</MDBCardTitle>
             <MDBCardTitle style={{color:"brown"}}>{apidata.price*80} rs</MDBCardTitle>
-            <MDBCardTitle>{apidata.category} </MDBCardTitle>
+            <MDBCardTitle  style={{color:"green"}}>{apidata.category} </MDBCardTitle>
             {/* <MDBCardTitle>{apidata.rating}</MDBCardTitle> */}
             <MDBCardText>
              {apidata.description}
             </MDBCardText>
-            <center><MDBBtn >Buy Now</MDBBtn></center> 
+            <center><MDBBtn style={{backgroundColor:"Brown"}}>Buy Now</MDBBtn></center> 
             {/* <MDBCardText>
               <small className='text-muted'>Last updated 3 mins ago</small>
             </MDBCardText> */}
@@ -49,6 +50,7 @@ function Item()
         </MDBCol>
       </MDBRow>
     </MDBCard>
+    <Footer></Footer>
     
         </>
     )

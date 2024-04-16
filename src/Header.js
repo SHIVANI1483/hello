@@ -4,20 +4,29 @@ import './header.css'
 import Home from './Home'
 import Jwellery from './Jwellery'
 import Electronics from './Electronic'
-import Footer from './Footer'
+
 import Item from './Item'
+import logo1 from './logo.png'
 
 
 import MenClothes from './MenClothes'
 import WomenCloth from './WomenCloth'
+import Footer from './Footer'
 
 
 const Header = () => {
   return (
-    <nav className="navbar">
-      <div className="container">
-        <div className="logo">
-          <Brand />
+    <>
+    <nav className="navbar" style={{backgroundColor:"Pink"}}>
+         
+      <div className="container"  >
+      <img src={logo1} height="40px" width="40px" ></img>
+       
+        <div className="logo" style={{fontFamily:"cursive",fontSize:"30px",marginLeft:"0px",color:"brown"}}>
+         
+        FashionStreet
+        
+       
         </div>
         <div className="nav-elements">
           <ul>
@@ -36,6 +45,7 @@ const Header = () => {
             <li>
               <NavLink to="/womenCloth">Women Cloth</NavLink>
             </li>
+           
             
           </ul>
         </div>
@@ -50,10 +60,15 @@ const Header = () => {
         <Route path='/item' element={<Item></Item>}></Route>
         
         
+        
 
       </Routes>
     
     </nav>
+   
+    </>
+
+  
   )
 }
 

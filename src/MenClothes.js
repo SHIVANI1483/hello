@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import {useNavigate} from "react-router-dom"
 import {
     MDBCard,
     MDBCardImage,
@@ -7,16 +8,24 @@ import {
     MDBCardText,
     MDBCardFooter,
     MDBRow,
-    MDBCol
+    MDBCol,
+    MDBBtn
   } from 'mdb-react-ui-kit';
+import Footer from "./Footer";
 function MenClothes()
 {
    
 
     const [apidata,setdata]=useState([])
+    const navigate=useNavigate()
     useEffect(()=>{
         getData()
     },[])
+    function getId(pid)
+    {
+      const data={pid,pid}
+      navigate("/item",{state:data})
+    }
      async function getData()
     {
       var result =await fetch("https://fakestoreapi.com/products/category/men's%20clothing")
@@ -29,24 +38,27 @@ function MenClothes()
     return(
         <>
          
-            <MDBRow className='row-cols-1 row-cols-md-3 g-4'>
+         <MDBRow className='row-cols-1 row-cols-md-3 g-4' style={{margin:"10px"}}>
              { 
-             apidata.map((item)=>  
-      <MDBCol>
-        <MDBCard className='h-100'>
+             apidata.map((item,i)=>  
+      <MDBCol key={i}>
+        <MDBCard className='h-100' style={{border:"2px solid pink" }}>
+          <center>
           <MDBCardImage
-            src={item.image}
+            src={item.image} style={{width:"100px", height:"150px", margin:"20px"}}
             alt='...'
             position='top'
           />
+          </center>
           <MDBCardBody>
-            <MDBCardTitle>{item.title}</MDBCardTitle>
-            {/* <MDBCardTitle>{item.price}</MDBCardTitle>
-            <MDBCardTitle>{item.rating}</MDBCardTitle> */}
+            <MDBCardTitle style={{fontFamily:"serif"}}>{item.title}</MDBCardTitle>
+            <MDBCardTitle style={{color:"brown"}}>{item.price*80} rs</MDBCardTitle>
+            <MDBCardTitle  style={{color:"red"}}>{item.category} </MDBCardTitle>
+            <MDBCardTitle  style={{color:"blue"}}>{item.rating.rate}</MDBCardTitle>
             <MDBCardText>
-              This is a longer card with supporting text below as a natural lead-in to additional content.
-              This content is a little bit longer.
+            {item.description}
             </MDBCardText>
+           <center><MDBBtn style={{backgroundColor:"Brown"}} onClick={()=>getId(item.id)}>view </MDBBtn></center> 
           </MDBCardBody>
           
         </MDBCard>
@@ -54,6 +66,8 @@ function MenClothes()
     )}
       
     </MDBRow>
+    <Footer></Footer>
+
   
         
 
